@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
             </h1>
             <p className="text-xl mb-8 text-blue-100">
               Get high-quality, verified databases with 70-80% connectivity. 
-              Fast delivery and 15-day replacement warranty.
+              Fast delivery and 7-day replacement warranty.
             </p>
             
             {/* Features */}
@@ -60,20 +60,16 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
             <h3 className="text-2xl font-bold mb-6">Why Choose Us?</h3>
             <div className="space-y-6">
               <div className="flex items-center justify-between">
-                <span className="text-blue-100">Connectivity Rate</span>
+                <span className="text-blue-100">Connectivity </span>
                 <span className="text-2xl font-bold text-yellow-400">70-80%</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-blue-100">Delivery Time</span>
-                <span className="text-2xl font-bold text-yellow-400">Instant</span>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-blue-100">Trial Period</span>
-                <span className="text-2xl font-bold text-yellow-400">7 Days</span>
+                <span className="text-2xl font-bold text-yellow-400">15-30 Minutes</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-blue-100">Replacement</span>
-                <span className="text-2xl font-bold text-yellow-400">15 Days</span>
+                <span className="text-2xl font-bold text-yellow-400">7 Days</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-blue-100">Coverage</span>
