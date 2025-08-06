@@ -54,8 +54,8 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">B2B Database</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">B2C Database</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Insurance Leads</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Loan Leads</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Insurance Sales</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Loan Sales</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Vehicle Owners Data</a></li>
               <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Custom Data Solutions</a></li>
             </ul>
