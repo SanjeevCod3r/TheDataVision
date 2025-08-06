@@ -82,8 +82,8 @@ const Footer = () => {
               <div className="flex items-start">
                 <MapPin className="w-5 h-5 text-blue-400 mr-3 mt-1 flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>Rajaji Puram E Block</p>
-                  <p>Near Taidian Mandir</p>
+                  <p>Rajajipuram E Block</p>
+                  <p>Near Tadian Mandir</p>
                   <p>Lucknow, UP - 226017</p>
                 </div>
               </div>

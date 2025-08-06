@@ -80,15 +80,15 @@ const About = () => (
           <ul className="space-y-4">
             <li className="flex items-center">
               <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-              <span className="text-gray-600">70-80% Connectivity Rate Guaranteed</span>
+              <span className="text-gray-600">70-80% Connectivity</span>
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-              <span className="text-gray-600">Instant Delivery & 7 Days Trial</span>
+              <span className="text-gray-600">Fast Delivery</span>
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
-              <span className="text-gray-600">15 Days Replacement Guarantee</span>
+              <span className="text-gray-600">7 Days Replacement Warranty</span>
             </li>
             <li className="flex items-center">
               <span className="w-2 h-2 bg-blue-600 rounded-full mr-3"></span>
