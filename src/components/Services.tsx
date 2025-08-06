@@ -5,10 +5,10 @@ const Services = () => {
   const serviceCategories = [
     { icon: Users, title: 'Individual Services', items: ['Educated person', 'Salaried person', 'Self employed', 'Job seekers', 'HNI clients', 'Local public', 'Mobile number holder'] },
     { icon: Car, title: 'Vehicle Owners', items: ['Car owners', 'Bike owner', 'Goods vehicle', 'Commercial Vehicle'] },
-    { icon: Building, title: 'Corporate Services', items: ['Corporate companies', 'Manufacturing companies', 'Private limited company', 'MSME company', 'IT company', 'Small company', 'Small business'] },
+    { icon: Building, title: 'Multiple Companies', items: ['Manufacturing companies', 'Private limited company', 'MSME company', 'SME Company', 'Small company', 'Small business'] },
     { icon: TrendingUp, title: 'Investment & Finance', items: ['Stock market', 'Real estate', 'Personal loan sales', 'Car loan', 'Business loan sales', 'Home loan sales'] },
     { icon: Shield, title: 'Insurance Services', items: ['Motor insurance', 'Health insurance sales', 'Life insurance sales', 'General insurance sales'] },
-    { icon: Briefcase, title: 'Professional Services', items: ['Doctor', 'IT employs', 'Private employee', 'B2B database', 'B2C database'] },
+    { icon: Briefcase, title: 'Professional Services', items: ['Doctor', 'IT employs', 'Private employee', 'B2B database', 'B2C database', 'Tour and Travel', 'Import and Export'] },
   ];
 
   const pricingPlans = [
@@ -23,7 +23,7 @@ const Services = () => {
   const specialPricing = [
     { category: 'Car Owners', price: '₹1 per Number', icon: Car },
     { category: 'Commercial Vehicle', price: '₹2 per Number', icon: Building },
-    { category: 'Stock Market Investors', price: '₹3 per Number', icon: TrendingUp },
+    { category: 'Pin Code Wise Data', price: '₹0.50 per Number', icon: TrendingUp },
   ];
 
   return (
@@ -63,9 +63,9 @@ const Services = () => {
             <h3 className="text-3xl font-bold mb-4">August Special Pricing</h3>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <span className="flex items-center">✅ 70–80% Connectivity Rate</span>
-              <span className="flex items-center">⚡ Instant Delivery</span>
-              <span className="flex items-center">🔁 7 Days Trial</span>
-              <span className="flex items-center">🔄 15 Days Replacement</span>
+              <span className="flex items-center">⚡ Fast Delivery</span>
+              <span className="flex items-center">🔁 Sample Package Available</span>
+              <span className="flex items-center">🔄 7 Days Replacement</span>
               <span className="flex items-center">📍 City-wise & State-wise PAN India</span>
             </div>
           </div>
@@ -107,7 +107,7 @@ const Services = () => {
             ))}
           </div>
           <div className="text-center mt-8">
-            <p className="text-gray-600 mb-4">🌐 Web/App Development Leads | 📍 Pin Code-wise Data Available</p>
+            <p className="text-gray-600 mb-4">🌐 Web/App Development Leads </p>
             <button className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200">
               Get Custom Quote
             </button>
