@@ -186,8 +186,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Office Address</h4>
                     <p className="text-gray-600">
-                      Rajaji Puram E Block<br />
-                      Near Taidian Mandir<br />
+                      Rajajipuram E Block<br />
+                      Near Tadian Mandir<br />
                       Lucknow, UP - 226017
                     </p>
                   </div>
