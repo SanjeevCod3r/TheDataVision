@@ -18,8 +18,8 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               for Your Business
             </h1>
             <p className="text-xl mb-8 text-blue-100">
-              Get high-quality, verified databases with 70-80% connectivity rate. 
-              Instant delivery, 7-day trial, and 15-day replacement guarantee.
+              Get high-quality, verified databases with 70-80% connectivity. 
+              Fast delivery and 15-day replacement guarantee.
             </p>
             
             {/* Features */}
@@ -30,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ onGetStarted }) => {
               </div>
               <div className="flex items-center space-x-3">
                 <Zap className="w-6 h-6 text-yellow-400" />
-                <span className="text-sm font-medium">Instant Delivery</span>
+                <span className="text-sm font-medium">Fast Delivery</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Shield className="w-6 h-6 text-yellow-400" />

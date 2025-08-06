@@ -63,7 +63,7 @@ const Services = () => {
             <h3 className="text-3xl font-bold mb-4">August Special Pricing</h3>
             <div className="flex flex-wrap justify-center gap-6 text-sm">
               <span className="flex items-center">✅ 70–80% Connectivity Rate</span>
-              <span className="flex items-center">⚡ Fast Delivery</span>
+              <span className="flex items-center">⚡ Instant Delivery</span>
               <span className="flex items-center">🔁 7 Days Trial</span>
               <span className="flex items-center">🔄 15 Days Replacement</span>
               <span className="flex items-center">📍 City-wise & State-wise PAN India</span>
