@@ -20,7 +20,7 @@ const OrderData = () => {
   const [orderSummary, setOrderSummary] = useState<any>(null);
 
   const dataCategories = [
-    { id: 'educated', name: 'Educated Person', price: 0.12 },
+    { id: 'educated', name: 'Educated Person' },
     { id: 'salaried', name: 'Salaried Person', price: 0.15 },
     { id: 'self-employed', name: 'Self Employed', price: 0.18 },
     { id: 'car-owners', name: 'Car Owners', price: 1.00 },
@@ -58,10 +58,10 @@ const OrderData = () => {
   const predefinedPackages = [
     { quantity: 5000, price: 599 },
     { quantity: 10000, price: 799 },
+    { quantity: 50000, price: 1499 },
     { quantity: 100000, price: 2499 },
     { quantity: 200000, price: 3999 },
-    { quantity: 500000, price: 6000 },
-    { quantity: 1000000, price: 7000 }
+    { quantity: 500000, price: 5999 }
   ];
 
   const calculatePrice = () => {
@@ -233,7 +233,6 @@ const OrderData = () => {
                       />
                       <div>
                         <span className="font-medium text-gray-900">{category.name}</span>
-                        <p className="text-sm text-gray-600">₹{category.price} per record</p>
                       </div>
                     </label>
                   ))}
