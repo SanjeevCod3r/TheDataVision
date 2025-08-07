@@ -466,22 +466,22 @@ const OrderData = () => {
               <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
             <h3 className="font-semibold text-gray-900 mb-2">70-80% Connectivity</h3>
-            <p className="text-sm text-gray-600">Guaranteed high-quality data with excellent connectivity rates</p>
+            <p className="text-sm text-gray-600">We ensure high-quality data with excellent connectivity rates</p>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-md text-center">
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Mail className="w-6 h-6 text-blue-600" />
             </div>
-            <h3 className="font-semibold text-gray-900 mb-2">Instant Delivery</h3>
-            <p className="text-sm text-gray-600">Data delivered to your email within 24 hours of payment</p>
+            <h3 className="font-semibold text-gray-900 mb-2">Fast Delivery</h3>
+            <p className="text-sm text-gray-600">Data delivered to your WhatsApp within 15 to 30 minutes of payment</p>
           </div>
           
           <div className="bg-white p-6 rounded-xl shadow-md text-center">
             <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <ShoppingCart className="w-6 h-6 text-purple-600" />
             </div>
-            <h3 className="font-semibold text-gray-900 mb-2">15 Days Replacement</h3>
+            <h3 className="font-semibold text-gray-900 mb-2">7 Days Replacement</h3>
             <p className="text-sm text-gray-600">Free replacement if data doesn't meet quality standards</p>
           </div>
         </div>
