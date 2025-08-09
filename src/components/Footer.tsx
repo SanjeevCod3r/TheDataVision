@@ -101,14 +101,17 @@ const Footer = () => {
             </p>
             
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <a href="https://merchant.razorpay.com/policy/R28FbqfYpwTr01/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Terms of Service
+              <a href="https://merchant.razorpay.com/policy/R28FbqfYpwTr01/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Terms of Conditions
               </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-                Refund Policy
+              <a href="https://merchant.razorpay.com/policy/R28FbqfYpwTr01/refund" className="text-gray-400 hover:text-white text-sm transition-colors">
+              Cancellation and Refunds
+              </a>
+              <a href="https://merchant.razorpay.com/policy/R28FbqfYpwTr01/shipping" className="text-gray-400 hover:text-white text-sm transition-colors">
+              Shipping Policy
               </a>
             </div>
           </div>
