@@ -18,6 +18,7 @@ const OrderData = () => {
   });
   const [currentStep, setCurrentStep] = useState(1);
   const [orderSummary, setOrderSummary] = useState<any>(null);
+  const [error, setError] = useState('');
 
   const dataCategories = [
     { id: 'educated', name: 'Educated Person' },
@@ -72,7 +73,7 @@ const OrderData = () => {
 
     let quantity = 0;
     if (dataQuantity === 'custom') {
-      quantity = parseInt(customQuantity) || 0;
+      quantity = Math.max(5000, parseInt(customQuantity) || 5000);
     } else {
       const pkg = predefinedPackages.find(p => p.quantity.toString() === dataQuantity);
       if (pkg) {
@@ -81,7 +82,7 @@ const OrderData = () => {
       quantity = parseInt(dataQuantity) || 0;
     }
 
-    return Math.round(quantity * category.price);
+    return Math.round(quantity * 0.12);
   };
 
   const handleCustomerDetailsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -92,9 +93,16 @@ const OrderData = () => {
   };
 
   const proceedToPayment = () => {
+    setError('');
+    const quantity = dataQuantity === 'custom' ? parseInt(customQuantity) : parseInt(dataQuantity);
+    
+    if (dataQuantity === 'custom' && quantity < 5000) {
+      setError('Minimum quantity for custom data must be 5000');
+      return;
+    }
+    
     const price = calculatePrice();
     const category = dataCategories.find(cat => cat.id === selectedCategory);
-    const quantity = dataQuantity === 'custom' ? parseInt(customQuantity) : parseInt(dataQuantity);
 
     setOrderSummary({
       category: category?.name,
@@ -279,14 +287,19 @@ const OrderData = () => {
                     <span className="font-medium text-gray-900">Custom Quantity</span>
                   </label>
                   {dataQuantity === 'custom' && (
-                    <input
-                      type="number"
-                      placeholder="Enter custom quantity"
-                      value={customQuantity}
-                      onChange={(e) => setCustomQuantity(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      min="1"
-                    />
+                    <div>
+                      <input
+                        type="number"
+                        placeholder="Enter custom quantity (min 5000)"
+                        value={customQuantity}
+                        onChange={(e) => setCustomQuantity(e.target.value)}
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        min="5000"
+                      />
+                      {error && dataQuantity === 'custom' && (
+                        <p className="mt-2 text-sm text-red-600">{error}</p>
+                      )}
+                    </div>
                   )}
                 </div>
               </div>
@@ -306,11 +319,18 @@ const OrderData = () => {
 
               <button
                 onClick={() => setCurrentStep(2)}
-                disabled={!selectedCategory || !dataQuantity || (dataQuantity === 'custom' && !customQuantity)}
+                disabled={
+                  !selectedCategory || 
+                  !dataQuantity || 
+                  (dataQuantity === 'custom' && (!customQuantity || isNaN(parseInt(customQuantity)) || parseInt(customQuantity) < 5000))
+                }
                 className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
                 Continue to Contact Details
               </button>
+              {dataQuantity === 'custom' && customQuantity && parseInt(customQuantity) < 5000 && (
+                <p className="mt-2 text-sm text-red-600">Minimum quantity for custom data must be 5000</p>
+              )}
             </div>
           )}
 
@@ -387,7 +407,8 @@ const OrderData = () => {
                 </button>
                 <button
                   onClick={proceedToPayment}
-                  disabled={!customerDetails.name || !customerDetails.email || !customerDetails.phone}
+                  disabled={!customerDetails.name || !customerDetails.email || !customerDetails.phone || 
+                           (dataQuantity === 'custom' && (isNaN(parseInt(customQuantity)) || parseInt(customQuantity) < 5000))}
                   className="flex-1 bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
                   Proceed to Payment
