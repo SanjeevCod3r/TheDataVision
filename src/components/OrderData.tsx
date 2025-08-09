@@ -21,19 +21,19 @@ const OrderData = () => {
   const [error, setError] = useState('');
 
   const dataCategories = [
-    { id: 'educated', name: 'Educated Person' },
+    { id: 'educated', name: 'Educated Person', price: 0.15 },
     { id: 'salaried', name: 'Salaried Person', price: 0.15 },
     { id: 'self-employed', name: 'Self Employed', price: 0.18 },
     { id: 'car-owners', name: 'Car Owners', price: 1.00 },
-    { id: 'bike-owners', name: 'Bike Owners', price: 0.50 },
-    { id: 'goods-vehicle', name: 'Goods Vehicle', price: 2.00 },
+    { id: 'bike-owners', name: 'Bike Owners', price: 1.00 },
+    { id: 'goods-vehicle', name: 'Goods Vehicle', price: 3.00 },
     { id: 'job-seekers', name: 'Job Seekers', price: 0.10 },
     { id: 'hni-clients', name: 'HNI Clients', price: 5.00 },
     { id: 'home-loan', name: 'Home Loan Sales', price: 2.50 },
     { id: 'personal-loan', name: 'Personal Loan Sales', price: 2.00 },
-    { id: 'car-loan', name: 'Car Loan', price: 2.50 },
+    { id: 'car-loan', name: 'Car Loan', price: 0.50 },
     { id: 'business-loan', name: 'Business Loan Sales', price: 3.00 },
-    { id: 'motor-insurance', name: 'Motor Insurance', price: 1.50 },
+    { id: 'motor-insurance', name: 'Motor Insurance', price: 1.00 },
     { id: 'health-insurance', name: 'Health Insurance Sales', price: 2.00 },
     { id: 'life-insurance', name: 'Life Insurance Sales', price: 2.50 },
     { id: 'general-insurance', name: 'General Insurance Sales', price: 1.80 },
@@ -42,7 +42,7 @@ const OrderData = () => {
     { id: 'private-limited', name: 'Private Limited Company', price: 4.50 },
     { id: 'msme', name: 'MSME Company', price: 3.00 },
     { id: 'it-company', name: 'IT Company', price: 5.00 },
-    { id: 'stock-market', name: 'Stock Market', price: 3.00 },
+    { id: 'stock-market', name: 'Stock Market', price: 2.00 },
     { id: 'real-estate', name: 'Real Estate', price: 2.50 },
     { id: 'doctor', name: 'Doctor', price: 8.00 },
     { id: 'local-public', name: 'Local Public', price: 0.08 },
@@ -53,7 +53,8 @@ const OrderData = () => {
     { id: 'private-employee', name: 'Private Employee', price: 2.00 },
     { id: 'small-company', name: 'Small Company', price: 2.50 },
     { id: 'small-business', name: 'Small Business', price: 2.00 },
-    { id: 'residential', name: 'Residential', price: 1.00 }
+    { id: 'residential', name: 'Residential', price: 1.00 },
+    { id: 'demataccount', name: 'Demat Account Holder', price: 1.00 }
   ];
 
   const predefinedPackages = [
