@@ -82,7 +82,7 @@ const OrderData = () => {
       quantity = parseInt(dataQuantity) || 0;
     }
 
-    return Math.round(quantity * 0.12);
+    return Math.round(quantity * category.price);
   };
 
   const handleCustomerDetailsChange = (e: React.ChangeEvent<HTMLInputElement>) => {
