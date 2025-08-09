@@ -19,15 +19,15 @@ const FAQ = () => {
     },
     {
       question: 'How quickly will I receive my data after payment?',
-      answer: 'We provide instant delivery! Once your payment is confirmed, you will receive your database immediately via email or download link.'
+      answer: 'We provide fast delivery! Once your payment is confirmed, you will receive your database within 10 to 20 minutes via WhatsApp or Excel file.'
     },
     {
       question: 'Do you offer a trial period?',
-      answer: 'Yes, we offer a 7-day trial period for all our databases. If you\'re not satisfied with the quality, you can request a refund or replacement within this period.'
+      answer: 'Yes, we offer a 7-day trial period for all our databases. If you\'re not satisfied with the quality, you can request a replacement within this period.'
     },
     {
       question: 'What if the data doesn\'t meet my expectations?',
-      answer: 'We offer a 15-day replacement guarantee. If the connectivity rate falls below our promised standards, we will replace the data with fresh, verified contacts at no extra cost.'
+      answer: 'We offer a 7-day replacement warranty. If the connectivity rate falls below our promised standards, we will replace the data with fresh, verified contacts at no extra cost.'
     },
     {
       question: 'Do you provide data for specific cities or states?',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Star, Quote } from 'lucide-react';
+import { Star, Quote, MessageSquare, ThumbsUp } from 'lucide-react';
 
 const ClientReviews = () => {
   const reviews = [
@@ -105,6 +105,50 @@ const ClientReviews = () => {
               <p className="text-gray-600">Customer Satisfaction</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* JustDial Review Section */}
+      <div className="mt-20 text-center">
+        <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Reviews on JustDial</h3>
+        <div className="max-w-4xl mx-auto bg-blue-50 p-6 rounded-xl">
+          <div className="flex items-center justify-center mb-4">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-6 h-6 text-yellow-400 fill-current" />
+            ))}
+          </div>
+          <p className="text-lg text-gray-700 mb-4">
+            "Exceptional service and support. The Data Vision team goes above and beyond to ensure customer satisfaction."
+          </p>
+          <a 
+            href="https://jsdl.in/RSL-PLP1748190744" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          >
+            <MessageSquare className="w-5 h-5 mr-2" />
+            Read Our Reviews on JustDial
+          </a>
+        </div>
+      </div>
+
+      {/* Share Your Feedback Section */}
+      <div className="mt-16 text-center">
+        <h3 className="text-2xl font-bold text-gray-900 mb-6">Share Your Experience</h3>
+        <div className="max-w-4xl mx-auto bg-gray-50 p-6 rounded-xl">
+          <ThumbsUp className="w-12 h-12 text-blue-600 mx-auto mb-4" />
+          <p className="text-lg text-gray-700 mb-6">
+            We value your feedback! Share your experience with The Data Vision and help us serve you better.
+          </p>
+          <a 
+            href="https://jsdl.in/RSL-JPD1747931771" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+          >
+            <MessageSquare className="w-5 h-5 mr-2" />
+            Share Your Feedback
+          </a>
         </div>
       </div>
     </section>
