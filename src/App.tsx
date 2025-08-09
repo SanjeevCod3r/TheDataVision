@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -8,10 +8,34 @@ import Milestones from './components/Milestones';
 import Contact from './components/Contact';
 import KYC from './components/KYC';
 import OrderData from './components/OrderData';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfConditions from './pages/TermsOfConditions';
+import CancellationAndRefunds from './pages/CancellationAndRefunds';
+import ShippingPolicy from './pages/ShippingPolicy';
 import Footer from './components/Footer';
 
 function App() {
   const [currentSection, setCurrentSection] = useState('home');
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.substring(1) || 'home';
+      setCurrentSection(path);
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  // Update URL when section changes
+  useEffect(() => {
+    if (currentSection !== 'home') {
+      window.history.pushState({}, '', `/${currentSection}`);
+    } else {
+      window.history.pushState({}, '', '/');
+    }
+  }, [currentSection]);
 
   const renderCurrentSection = () => {
     switch (currentSection) {
@@ -35,7 +59,21 @@ function App() {
         return <KYC />;
       case 'order':
         return <OrderData />;
+      case 'privacy-policy':
+        return <PrivacyPolicy currentSection={currentSection} setCurrentSection={setCurrentSection} />;
+      case 'terms-of-conditions':
+        return <TermsOfConditions currentSection={currentSection} setCurrentSection={setCurrentSection} />;
+      case 'cancellation-and-refunds':
+        return <CancellationAndRefunds currentSection={currentSection} setCurrentSection={setCurrentSection} />;
+      case 'shipping-policy':
+        return <ShippingPolicy currentSection={currentSection} setCurrentSection={setCurrentSection} />;
       default:
+        // Handle direct URL access by checking the current path
+        const path = window.location.pathname.substring(1);
+        if (path) {
+          setCurrentSection(path);
+          return <div className="min-h-screen">Loading...</div>;
+        }
         return (
           <>
             <Hero onGetStarted={() => setCurrentSection('kyc')} />
@@ -48,11 +86,15 @@ function App() {
     }
   };
 
+  const handleNavigate = (section: string) => {
+    setCurrentSection(section);
+  };
+
   return (
     <div className="min-h-screen bg-white">
       <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
       {renderCurrentSection()}
-      <Footer />
+      <Footer onNavigate={handleNavigate} />
     </div>
   );
 }
