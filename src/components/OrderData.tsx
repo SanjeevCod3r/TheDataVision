@@ -57,7 +57,7 @@ const OrderData = () => {
   ];
 
   const predefinedPackages = [
-    { quantity: 5000, price: 59 },
+    { quantity: 5000, price: 599 },
     { quantity: 10000, price: 799 },
     { quantity: 50000, price: 1499 },
     { quantity: 100000, price: 2499 },
