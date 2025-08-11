@@ -27,7 +27,6 @@ const OrderData = () => {
     { id: 'car-owners', name: 'Car Owners', price: 1.00 },
     { id: 'bike-owners', name: 'Bike Owners', price: 1.00 },
     { id: 'goods-vehicle', name: 'Goods Vehicle', price: 3.00 },
-    { id: 'job-seekers', name: '', price: 0.12 },
     { id: 'hni-clients', name: 'HNI Clients', price: 0.12 },
     { id: 'home-loan', name: 'Home Loan Sales', price: 0.12 },
     { id: 'personal-loan', name: 'Personal Loan Sales', price: 0.12 },
