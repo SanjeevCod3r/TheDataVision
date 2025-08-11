@@ -123,7 +123,7 @@ const OrderData = () => {
     script.src = 'https://checkout.razorpay.com/v1/checkout.js';
     script.onload = () => {
       const options = {
-        key: 'rzp_test_zlq3QdveON820t', // Replace with your Razorpay key
+        key: 'rzp_live_XH95alJE6lzsoF', // Replace with your Razorpay key
         amount: price * 100, // Amount in paise
         currency: 'INR',
         name: 'THE DATA VISION',
