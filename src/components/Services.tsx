@@ -14,7 +14,8 @@ const Services = () => {
   const pricingPlans = [
     { data: '5,000', price: '₹599', popular: false },
     { data: '10,000', price: '₹799', popular: false },
-    { data: '1 Lakh', price: '₹2,499', popular: true },
+    { data: '50,000', price: '₹1,499', popular: true },
+    { data: '1 Lakh', price: '₹2,499', popular: false },
     { data: '2 Lakh', price: '₹3,999', popular: false },
     { data: '5 Lakh', price: '₹6,000', popular: false },
     { data: '10 Lakh', price: '₹7,000', popular: false },
@@ -127,7 +128,14 @@ const Services = () => {
         {/* Pricing Plans */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {pricingPlans.map((plan, index) => (
-            <div key={index} className={`relative bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-all duration-200 ${plan.popular ? 'ring-4 ring-blue-600 transform scale-105' : ''}`}>
+            <div 
+              key={index} 
+              className={`relative bg-white p-8 rounded-xl shadow-md transition-all duration-300 transform hover:scale-105 hover:shadow-xl ${
+                plan.popular 
+                  ? 'ring-4 ring-blue-600 transform scale-105 border-2 border-blue-500' 
+                  : 'hover:border-2 hover:border-blue-300' 
+              }`}
+            >
               {plan.popular && (
                 <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                   Most Popular
