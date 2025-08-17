@@ -72,12 +72,22 @@ const Milestones = () => {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Milestones & Achievements</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Building trust through consistent performance and quality service delivery
-          </p>
+        {/* Header with Background */}
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-900 to-blue-700 text-white p-12 mb-16">
+          <div className="relative z-10 max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Milestones & Achievements</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+              Building trust through consistent performance and quality service delivery
+            </p>
+          </div>
+          <div className="absolute inset-0 opacity-20">
+            <img 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Data Visualization"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
         </div>
 
         {/* Stats Grid */}
@@ -95,33 +105,43 @@ const Milestones = () => {
         </div>
 
         {/* Timeline */}
-        <div className="bg-gray-50 rounded-2xl p-8">
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Journey</h3>
-          
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-600 hidden md:block"></div>
+        <div className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
+            <img 
+              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Data Background"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className="relative z-10">
+            <h3 className="text-3xl font-bold text-gray-900 text-center mb-12">Our Journey</h3>
             
-            {/* Timeline Items */}
-            <div className="space-y-12">
-              {achievements.map((achievement, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:space-x-8`}>
-                  {/* Content */}
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center md:text-inherit`}>
-                    <div className="bg-white p-6 rounded-xl shadow-md">
-                      <h4 className="text-2xl font-bold text-blue-600 mb-2">{achievement.year}</h4>
-                      <h5 className="text-xl font-semibold text-gray-900 mb-3">{achievement.title}</h5>
-                      <p className="text-gray-600">{achievement.description}</p>
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-600 hidden md:block"></div>
+              
+              {/* Timeline Items */}
+              <div className="space-y-12">
+                {achievements.map((achievement, index) => (
+                  <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col md:space-x-8`}>
+                    {/* Content */}
+                    <div className={`flex-1 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'} text-center md:text-inherit`}>
+                      <div className="bg-white p-6 rounded-xl shadow-md">
+                        <h4 className="text-2xl font-bold text-blue-600 mb-2">{achievement.year}</h4>
+                        <h5 className="text-xl font-semibold text-gray-900 mb-3">{achievement.title}</h5>
+                        <p className="text-gray-600">{achievement.description}</p>
+                      </div>
                     </div>
+                    
+                    {/* Timeline Dot */}
+                    <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-md z-10 hidden md:block"></div>
+                    
+                    {/* Spacer for alternating layout */}
+                    <div className="flex-1 hidden md:block"></div>
                   </div>
-                  
-                  {/* Timeline Dot */}
-                  <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-md z-10 hidden md:block"></div>
-                  
-                  {/* Spacer for alternating layout */}
-                  <div className="flex-1 hidden md:block"></div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -133,6 +153,44 @@ const Milestones = () => {
           <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg">
             Start Your Journey Today
           </button>
+        </div>
+
+        {/* Stats Visualization */}
+        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl p-8 text-white">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 className="text-3xl font-bold mb-6">Data That Drives Decisions</h3>
+              <p className="text-blue-100 mb-6">
+                Our comprehensive database powers businesses across India with accurate, verified information. 
+                We help you connect with your target audience effectively.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center">
+                  <span className="bg-white/20 p-1 rounded-full mr-3">📊</span>
+                  <span>Real-time data updates</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="bg-white/20 p-1 rounded-full mr-3">🔍</span>
+                  <span>Advanced filtering options</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="bg-white/20 p-1 rounded-full mr-3">🔄</span>
+                  <span>Regular database maintenance</span>
+                </li>
+              </ul>
+              <button className="mt-6 bg-white text-blue-800 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition-colors duration-200">
+                Explore Our Data Solutions
+              </button>
+            </div>
+            <div className="hidden md:block">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                alt="Data Analytics Dashboard"
+                className="w-full rounded-lg shadow-2xl"
+                loading="lazy"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

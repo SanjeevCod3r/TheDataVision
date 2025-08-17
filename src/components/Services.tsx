@@ -29,12 +29,34 @@ const Services = () => {
   return (
     <section id="services" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Data Services</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive database solutions across multiple categories with guaranteed quality and connectivity
-          </p>
+        {/* Header with Image */}
+        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-blue-600 to-blue-800 mb-16 p-8 md:p-12">
+          <div className="relative z-10 max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Our Data Services</h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-8">
+              Comprehensive database solutions across multiple categories with guaranteed quality and connectivity
+            </p>
+            <div className="flex justify-center space-x-4">
+              <button 
+                onClick={() => window.location.hash = '#order'}
+                className="bg-white text-blue-700 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200"
+              >
+                Get Started
+              </button>
+              <button 
+                onClick={() => window.location.hash = '#contact'}
+                className="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200"
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+          <img 
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+            alt="Data Analytics"
+            className="absolute inset-0 w-full h-full object-cover opacity-20"
+            loading="lazy"
+          />
         </div>
 
         {/* Service Categories */}
@@ -57,16 +79,47 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Features */}
-        <div className="bg-blue-600 text-white p-8 rounded-2xl mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-4">August Special Pricing</h3>
-            <div className="flex flex-wrap justify-center gap-6 text-sm">
-              <span className="flex items-center">✅ 70–80% Connectivity Rate</span>
-              <span className="flex items-center">⚡ Fast Delivery</span>
-              <span className="flex items-center">🔁 Sample Package Available</span>
-              <span className="flex items-center">🔄 7 Days Replacement</span>
-              <span className="flex items-center">📍 City-wise & State-wise PAN India</span>
+        {/* Features with Image */}
+        <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-2xl mb-16">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="p-8 md:p-12">
+              <h3 className="text-3xl font-bold mb-6">August Special Pricing</h3>
+              <ul className="space-y-4 text-lg">
+                <li className="flex items-center">
+                  <span className="bg-white/20 p-1 rounded-full mr-3">✅</span>
+                  <span>70–80% Connectivity Rate</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="bg-white/20 p-1 rounded-full mr-3">⚡</span>
+                  <span>Fast Delivery in 15-30 Minutes</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="bg-white/20 p-1 rounded-full mr-3">🔍</span>
+                  <span>Sample Package Available</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="bg-white/20 p-1 rounded-full mr-3">🔄</span>
+                  <span>7 Days Replacement Guarantee</span>
+                </li>
+                <li className="flex items-center">
+                  <span className="bg-white/20 p-1 rounded-full mr-3">📍</span>
+                  <span>City-wise & State-wise PAN India Coverage</span>
+                </li>
+              </ul>
+              <button 
+                onClick={() => window.location.hash = '#order'}
+                className="mt-8 bg-white text-blue-800 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition-colors duration-200"
+              >
+                View All Plans
+              </button>
+            </div>
+            <div className="hidden md:block h-full">
+              <img 
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                alt="Data Analytics Dashboard"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </div>
           </div>
         </div>
