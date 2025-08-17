@@ -175,7 +175,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-2">Email Address</h4>
                     <p className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">
-                      support@thedatavision.com
+                      thedatavison2021@gmail.com
                     </p>
                   </div>
                 </div>
