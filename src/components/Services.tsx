@@ -1,14 +1,44 @@
 import React from 'react';
-import { Users, Car, Building, TrendingUp, Shield, Heart, Home, Briefcase } from 'lucide-react';
+import { Users, Car, Building, TrendingUp, Shield, Briefcase } from 'lucide-react';
 
 const Services = () => {
   const serviceCategories = [
-    { icon: Users, title: 'Individual Services', items: ['Educated person', 'Salaried person', 'Self employed', 'Job seekers', 'HNI clients', 'Local public', 'Mobile number holder'] },
-    { icon: Car, title: 'Vehicle Owners', items: ['Car owners', 'Bike owner', 'Goods vehicle', 'Commercial Vehicle'] },
-    { icon: Building, title: 'Multiple Companies', items: ['Manufacturing companies', 'Private limited company', 'MSME company', 'SME Company', 'Small company', 'Small business'] },
-    { icon: TrendingUp, title: 'Investment & Finance', items: ['Stock market', 'Real estate', 'Personal loan sales', 'Car loan', 'Business loan sales', 'Home loan sales'] },
-    { icon: Shield, title: 'Insurance Services', items: ['Motor insurance', 'Health insurance sales', 'Life insurance sales', 'General insurance sales'] },
-    { icon: Briefcase, title: 'Professional Services', items: ['Doctor', 'IT employs', 'Private employee', 'B2B database', 'B2C database', 'Tour and Travel', 'Import and Export'] },
+    { 
+      icon: Users, 
+      title: 'Individual Services', 
+      items: ['Educated person', 'Salaried person', 'Self employed', 'Job seekers', 'HNI clients', 'Local public', 'Mobile number holder'],
+      bgImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+    },
+    { 
+      icon: Car, 
+      title: 'Vehicle Owners', 
+      items: ['Car owners', 'Bike owner', 'Goods vehicle', 'Commercial Vehicle'],
+      bgImage: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+    },
+    { 
+      icon: Building, 
+      title: 'Multiple Companies', 
+      items: ['Manufacturing companies', 'Private limited company', 'MSME company', 'SME Company', 'Small company', 'Small business'],
+      bgImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+    },
+    { 
+      icon: TrendingUp, 
+      title: 'Investment & Finance', 
+      items: ['Stock market', 'Real estate', 'Personal loan sales', 'Car loan', 'Business loan sales', 'Home loan sales'],
+      bgImage: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+    },
+    { 
+      icon: Shield, 
+      title: 'Insurance Services', 
+      items: ['Motor insurance', 'Health insurance sales', 'Life insurance sales', 'General insurance sales'],
+      bgImage: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+    },
+    { 
+      icon: Briefcase, 
+      title: 'Professional Services', 
+      items: ['Doctor', 'IT employs', 'Private employee', 'B2B database', 'B2C database', 'Tour and Travel', 'Import and Export'],
+      bgImage: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+    },
   ];
 
   const pricingPlans = [
@@ -63,19 +93,47 @@ const Services = () => {
         {/* Service Categories */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {serviceCategories.map((category, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200">
-              <div className="flex items-center mb-4">
-                <category.icon className="w-8 h-8 text-blue-600 mr-3" />
-                <h3 className="text-xl font-semibold text-gray-900">{category.title}</h3>
+            <div 
+              key={index} 
+              className="relative overflow-hidden group rounded-xl shadow-md hover:shadow-xl transition-all duration-300 h-full min-h-[400px]"
+            >
+              {/* Background Image */}
+              <div 
+                className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                style={{ 
+                  backgroundImage: `url(${category.bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundAttachment: 'fixed'
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent transition-colors duration-300" />
               </div>
-              <ul className="space-y-2">
-                {category.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-center text-gray-600">
-                    <span className="w-2 h-2 bg-blue-600 rounded-full mr-3 flex-shrink-0"></span>
-                    <span className="text-sm">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              
+              {/* Content */}
+              <div className="relative z-10 h-full flex flex-col p-6 text-white bg-black/30 hover:bg-black/40 transition-colors duration-300">
+                <div className="flex items-center mb-4">
+                  <category.icon className="w-8 h-8 text-white mr-3" />
+                  <h3 className="text-xl font-semibold text-white">{category.title}</h3>
+                </div>
+                <ul className="space-y-2 flex-1">
+                  {category.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-center text-gray-200 group-hover:text-white transition-colors">
+                      <span className="w-2 h-2 bg-white rounded-full mr-3 flex-shrink-0"></span>
+                      <span className="text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-4 pt-4 border-t border-white/20">
+                  <button 
+                    onClick={() => window.location.hash = '#contact'}
+                    className="text-white text-sm font-medium hover:underline"
+                  >
+                    Learn more →
+                  </button>
+                </div>
+              </div>
             </div>
           ))}
         </div>
