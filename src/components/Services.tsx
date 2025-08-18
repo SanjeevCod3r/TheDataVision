@@ -142,7 +142,7 @@ const Services = () => {
         <div className="relative overflow-hidden bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-2xl mb-16">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="p-8 md:p-12">
-              <h3 className="text-3xl font-bold mb-6">August Special Pricing</h3>
+              <h3 className="text-3xl font-bold mb-6">2025 Special Pricing</h3>
               <ul className="space-y-4 text-lg">
                 <li className="flex items-center">
                   <span className="bg-white/20 p-1 rounded-full mr-3">✅</span>
