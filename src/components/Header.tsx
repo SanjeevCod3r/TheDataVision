@@ -49,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection, setCurrentSection }) =>
           {/* Get Started Button */}
           <div className="hidden md:flex">
             <button
-              onClick={() => setCurrentSection('kyc')}
+              onClick={() => setCurrentSection('order')}
               className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
             >
               Get Started
@@ -89,7 +89,7 @@ const Header: React.FC<HeaderProps> = ({ currentSection, setCurrentSection }) =>
               ))}
               <button
                 onClick={() => {
-                  setCurrentSection('kyc');
+                  setCurrentSection('order');
                   setIsMenuOpen(false);
                 }}
                 className="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 w-full text-center"

@@ -10,6 +10,10 @@ import KYC from './components/KYC';
 import OrderData from './components/OrderData';
 import AboutUs from './components/AboutUs';
 import Footer from './components/Footer';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfConditions from './components/TermsOfConditions';
+import CancellationRefunds from './components/CancellationRefunds';
+import ShippingPolicy from './components/ShippingPolicy';
 
 function App() {
   const [currentSection, setCurrentSection] = useState('home');
@@ -19,8 +23,8 @@ function App() {
       case 'home':
         return (
           <>
-            <Hero onGetStarted={() => setCurrentSection('kyc')} />
-            <Services />
+            <Hero onGetStarted={() => setCurrentSection('kyc')} onOrderNow={() => setCurrentSection('order')} />
+            <Services onViewAllPlans={() => setCurrentSection('services')} />
             <ClientReviews />
             <Milestones />
             <FAQ />
@@ -36,11 +40,19 @@ function App() {
         return <KYC />;
       case 'order':
         return <OrderData />;
+      case 'privacy':
+        return <PrivacyPolicy />;
+      case 'terms':
+        return <TermsOfConditions />;
+      case 'refunds':
+        return <CancellationRefunds />;
+      case 'shipping':
+        return <ShippingPolicy />;
       default:
         return (
           <>
-            <Hero onGetStarted={() => setCurrentSection('kyc')} />
-            <Services />
+            <Hero onGetStarted={() => setCurrentSection('kyc')} onOrderNow={() => setCurrentSection('order')} />
+            <Services onViewAllPlans={() => setCurrentSection('services')} />
             <ClientReviews />
             <Milestones />
             <FAQ />
@@ -53,7 +65,7 @@ function App() {
     <div className="min-h-screen bg-white">
       <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
       {renderCurrentSection()}
-      <Footer />
+      <Footer setCurrentSection={setCurrentSection} />
     </div>
   );
 }

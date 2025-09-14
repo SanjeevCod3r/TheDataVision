@@ -1,7 +1,11 @@
 import React from 'react';
 import { Database, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
-const Footer = () => {
+interface FooterProps {
+  setCurrentSection?: (section: string) => void;
+}
+
+const Footer: React.FC<FooterProps> = ({ setCurrentSection }) => {
   return (
     <footer className="bg-gray-900 text-white">
       {/* Main Footer */}
@@ -114,18 +118,30 @@ const Footer = () => {
             </div>
             
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <button 
+                onClick={() => setCurrentSection?.('privacy')}
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 Privacy Policy
-              </a>
-              <a href="" className="text-gray-400 hover:text-white text-sm transition-colors">
+              </button>
+              <button 
+                onClick={() => setCurrentSection?.('terms')}
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 Terms of Conditions
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-              Cancellation and Refunds
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
-              Shipping Policy
-              </a>
+              </button>
+              <button 
+                onClick={() => setCurrentSection?.('refunds')}
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                Cancellation and Refunds
+              </button>
+              <button 
+                onClick={() => setCurrentSection?.('shipping')}
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                Shipping Policy
+              </button>
             </div>
           </div>
         </div>

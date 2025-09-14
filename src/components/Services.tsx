@@ -1,7 +1,11 @@
 import React from 'react';
 import { Users, Car, Building, TrendingUp, Shield, Briefcase } from 'lucide-react';
 
-const Services = () => {
+interface ServicesProps {
+  onViewAllPlans?: () => void;
+}
+
+const Services: React.FC<ServicesProps> = ({ onViewAllPlans }) => {
   const serviceCategories = [
     { 
       icon: Users, 
@@ -30,7 +34,7 @@ const Services = () => {
     { 
       icon: Shield, 
       title: 'Insurance Services', 
-      items: ['Motor insurance', 'Health insurance sales', 'Life insurance sales', 'General insurance sales'],
+      items: ['Motor insurance', 'Health insurance sales', 'Life insurance sales', 'General insurance sales', 'Health insurance specific lead'],
       bgImage: 'https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
     },
     { 
@@ -125,14 +129,6 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-4 pt-4 border-t border-white/20">
-                  <button 
-                    onClick={() => window.location.hash = '#contact'}
-                    className="text-white text-sm font-medium hover:underline"
-                  >
-                    Learn more →
-                  </button>
-                </div>
               </div>
             </div>
           ))}
@@ -158,7 +154,7 @@ const Services = () => {
                 </li>
                 <li className="flex items-center">
                   <span className="bg-white/20 p-1 rounded-full mr-3">🔄</span>
-                  <span>7 Days Replacement Guarantee</span>
+                  <span>7 Days Replacement Warranty</span>
                 </li>
                 <li className="flex items-center">
                   <span className="bg-white/20 p-1 rounded-full mr-3">📍</span>
@@ -166,7 +162,7 @@ const Services = () => {
                 </li>
               </ul>
               <button 
-                onClick={() => window.location.hash = '#order'}
+                onClick={onViewAllPlans}
                 className="mt-8 bg-white text-blue-800 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition-colors duration-200"
               >
                 View All Plans
