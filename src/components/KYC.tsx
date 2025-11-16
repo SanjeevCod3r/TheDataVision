@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { User, Mail, Phone, MapPin, Building, CheckCircle } from 'lucide-react';
 
+const WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxyF2QDA1lpdGHvsRxzIznJx-6Wb_lz2OO-vQvyhM15PdY43Q6o5ANc95g-xRBWtXXrXw/exec';
+
 const KYC = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -11,6 +13,8 @@ const KYC = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -19,23 +23,47 @@ const KYC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle KYC form submission logic here
-    console.log('KYC Form submitted:', formData);
-    setIsSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        number: '',
-        email: '',
-        address: '',
-        companyName: ''
+    setError(null);
+    if (!WEBHOOK_URL) {
+      setError('KYC destination is not configured. Please set the webhook URL.');
+      return;
+    }
+    setLoading(true);
+    try {
+      const fd = new FormData();
+      fd.append('name', formData.name);
+      fd.append('number', formData.number);
+      fd.append('email', formData.email);
+      fd.append('address', formData.address);
+      fd.append('companyName', formData.companyName);
+      fd.append('timestamp', new Date().toISOString());
+
+      const res = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        body: fd,
       });
-    }, 3000);
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '');
+        throw new Error(txt || 'Failed to submit KYC');
+      }
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          number: '',
+          email: '',
+          address: '',
+          companyName: ''
+        });
+      }, 3000);
+    } catch (err: any) {
+      setError(err?.message || 'Submission failed');
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -62,6 +90,11 @@ const KYC = () => {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        {error && (
+          <div className="mb-6 p-4 rounded-lg bg-red-50 text-red-700 border border-red-200">
+            {error}
+          </div>
+        )}
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">KYC Verification</h2>
@@ -220,9 +253,10 @@ const KYC = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+              disabled={loading}
+              className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              Submit KYC Details
+              {loading ? 'Submitting...' : 'Submit KYC Details'}
             </button>
           </form>
 
