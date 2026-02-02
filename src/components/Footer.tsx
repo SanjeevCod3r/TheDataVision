@@ -102,7 +102,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentSection }) => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex flex-col space-y-2">
               <p className="text-gray-400 text-sm">
-                © 2025 The Data Vision. All rights reserved.
+                © 2026 The Data Vision. All rights reserved.
               </p>
               <p className="text-gray-500 text-xs">
                 Made by{' '}
