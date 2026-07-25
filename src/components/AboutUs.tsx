@@ -4,28 +4,10 @@ import { Database, Users, Shield, Award, Target, Eye, Heart, TrendingUp, CheckCi
 const AboutUs = () => {
   const teamMembers = [
     {
-      name: 'Rajesh Kumar',
+      name: 'Aditya Gupta',
       position: 'Founder & CEO',
       image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=1',
       description: 'Visionary leader with 10+ years in data solutions'
-    },
-    {
-      name: 'Priya Sharma',
-      position: 'Head of Data Quality',
-      image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=1',
-      description: 'Expert in data verification and quality assurance'
-    },
-    {
-      name: 'Amit Patel',
-      position: 'Technical Director',
-      image: 'https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=1',
-      description: 'Technology innovator driving our platform development'
-    },
-    {
-      name: 'Neha Singh',
-      position: 'Customer Success Manager',
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=1',
-      description: 'Dedicated to ensuring exceptional customer experiences'
     }
   ];
 
