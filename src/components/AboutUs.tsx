@@ -1,12 +1,13 @@
 import React from 'react';
 import { Database, Users, Shield, Award, Target, Eye, Heart, TrendingUp, CheckCircle, Star, Globe, Clock } from 'lucide-react';
+import AdityaPhoto from '../assets/Aditya_Photo.jpeg';
 
 const AboutUs = () => {
   const teamMembers = [
     {
       name: 'Aditya Gupta',
       position: 'Founder & CEO',
-      image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=300&h=300&dpr=1',
+      image: AdityaPhoto,
       description: 'Visionary leader with 10+ years in data solutions'
     }
   ];
